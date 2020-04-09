@@ -15,7 +15,7 @@ to answer maximum questions and an option of “Pass”. There will also be 2-3 
 a chance to multiply their money, if the dice lands on the suggested number. Lets not forget, player may even lose their money from this bonus round 
 also. At all times, User’s balance will be on the screen. Initially, they will have 1000$ in their balance. After the completion of 10 rounds, player’s 
 final balance will be printed on the screen.
-##Features we plan to Implement
+## Features we plan to Implement
 The lucky 7 game involves gambling using dice so there will be random generation of numbers. We will use arrays to store questions for each round and a random number will 
 be generated and accordingly the question will be printed on the screen. We will use dynamic arrays for storing the questions.We will store the question number and money 
 balance of the player using file input/output.Moreover, we will be making several functions like one for lucky 7 and another one for the rapid fire round and place them in
