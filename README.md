@@ -16,7 +16,7 @@
 * The game show will consist of trivia based questions. These questions will be presented in the form of rounds. 
   In some rounds, the questions will be answered by manually by entering the answer, while in other rounds the user would have to select    an option.
 * The topics would include but are not limited to science, sports, politics. 
-  The game will include rapid fire rounds
+* The game will include rapid fire rounds. One such example would be the game of lucky 7 that would allow the user to gamble with large   amounts of money.
   and rounds which would create chances to earn more money by gambling.
 * At the end of the game, a player report will be generated and a score status of current player would be displayed.
   Additionally, a scoreboard will be updated after every round to track the game usage.
