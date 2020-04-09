@@ -10,12 +10,11 @@
 ## Description of the Text-Based Game -
 
 * Our project is dedicated to emulate a gameshow. This game show would include several rounds bound by a sequential game pattern i.e. succession of rounds in an order.
-  The project structure is based on our user earning points in the form of money. Every right decision would lead to addition of points, in turn every error would lead to
-  thd reduction of points i.e. the money. The currency of money earned can be entered by the user or using default value be set to game currency.
-  The game show will consist of trivia based questions. These questions will be presented in the form of rounds. In some rounds, the questions will be answered by manually   entering the answer, while in other rounds the user would have to select an option.
-  The topics would include but are not limited to science, sports, politics. The game will include rapid fire rounds
+* The project structure is based on our user earning points in the form of money. Every right decision would lead to addition of points, in turn every error would lead to the reduction of points i.e. the money. The currency of money earned can be entered by the user or using default value be set to game currency.
+* The game show will consist of trivia based questions. These questions will be presented in the form of rounds. In some rounds, the questions will be answered by manually   entering the answer, while in other rounds the user would have to select an option.
+* The topics would include but are not limited to science, sports, politics. The game will include rapid fire rounds
   and rounds which would create chances to earn more money by gambling.
-  At the end of the game, a player report will be generated and a score status of current player would be displayed.
+* At the end of the game, a player report will be generated and a score status of current player would be displayed.
   Additionally, a scoreboard will be updated after every round to track the game usage.
 
 ## Features we plan to Implement -
