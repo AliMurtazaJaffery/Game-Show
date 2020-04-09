@@ -41,4 +41,5 @@
 
 5. Program code in multiple files:
  * Program code will be stored in multiple files to implement the game functionality without any errors.
- * These files would help to regulate the processed used in the game.
+ * These files would help to regulate the process used in the game.
+ * We plan to use functions for our rapid fire round and store them in multiple files. In addition to this, we plan to use a Makefile to increase the efficiency of our program. 
