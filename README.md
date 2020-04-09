@@ -1,11 +1,11 @@
 # Game-Show
 Computer Programming 2 Course Code ENGG1340 Group 142 Project.
 
-##Identification of Team members
-*Jaffery Syed Muhammad Ali Murtaza   UID:3035718046
-*Rajiv Arnav   UID:3035709057
+## Identification of Team members
+* Jaffery Syed Muhammad Ali Murtaza   UID:3035718046
+* Rajiv Arnav   UID:3035709057
 
-##Description of the text-based game
+## Description of the text-based game
 
 It is basically a gameshow where the players have the chance to win thousands of dollars. Wrong decisions can lead them to lose their money.
 In this gameshow, questions from various topics (maths, science, sports,  politics and international relations) will be printed on screen and 
