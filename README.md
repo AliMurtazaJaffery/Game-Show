@@ -1,7 +1,7 @@
 # ENGG1340: Computer Programming 2                                                 
 # Group 142
 
-## Team members:-
+## Team Members:-
 
 * NAME: Jaffery Syed Muhammad Ali Murtaza   
   UID: 3035718046
