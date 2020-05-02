@@ -75,8 +75,6 @@ int main() {
 
     introduction(player_1);
 
-    cout << "Enter Number of Trivia Questions [max(15)] : ";
-    cin >> no_of_questions;
     buffer();
 
     select_currency();
