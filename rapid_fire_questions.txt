@@ -1,0 +1,25 @@
+(Q1) Which place is called the Big Apple?
+New-York
+(Q2) How many days did the battle of Mahabharatha last?
+18
+(Q3) Which is the largest delta in the world?
+Ganges
+(Q4) Who was theirst Woman Prime minister of Britan?
+Margaret Thatcher
+(Q5)Capital of Peru?
+Lime
+(Q6) Name the longest river in the world.
+Nile
+(Q7) Name the highest mountain in the world.
+Everest
+(Q8)Name of the largest coffee growing country in the world is?
+Brazil
+(Q9) Christiana Ronaldo is related with which sport?
+Football
+(Q10) The green colour of the leaves is due to?
+Chlorophyll
+(Q11) Who won the football world cup for maximum number of times?
+Brazil
+(Q12) An instrument used for measuring sound under water?
+Hydrophone
+
