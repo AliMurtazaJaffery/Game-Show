@@ -107,7 +107,3 @@ void rapid_fire(int &round, int &money) {
   delete [] user_answers;
 }
 
-int main() {
-  int round = 22, money = 100;
-  rapid_fire(round,money);
-}
