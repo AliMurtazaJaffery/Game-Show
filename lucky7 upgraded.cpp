@@ -148,7 +148,3 @@ void lucky_7(int &round, int &money) {
     round +=1;
 }
 
-int main() {
-  int round = 22, money = 1;
-  lucky_7(round,money);
-}
