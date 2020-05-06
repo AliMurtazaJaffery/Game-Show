@@ -13,8 +13,8 @@ string currency;
 void buffer() {
   cout << endl;
   cout << "Press Enter to Continue!" << endl;
-  getch();
-  system("cls");
+  cin.get();
+  system("clear");
 }
 // function to print introduction for the game and instructions too, edit the last!!!
 void introduction (string player_1) {
