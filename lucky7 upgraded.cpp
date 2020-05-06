@@ -145,6 +145,6 @@ void lucky_7(int &round, int &money) {
       typewriter("Sorry! No luck! ",100000);
       cout << endl << endl;
     }
-    round +=1;
+    round += 1;
 }
 
