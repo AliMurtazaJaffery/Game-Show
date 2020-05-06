@@ -11,7 +11,7 @@ void buffer() {
   cout << endl;
   cout << "Press Enter to Continue!" << endl;
   cin.get();
-  system("cls");
+  system("cls"); // change to clear for linux
 }
 
 void printboard() {
