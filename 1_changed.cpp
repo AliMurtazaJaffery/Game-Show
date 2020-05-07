@@ -39,7 +39,19 @@ void introduction (string player_1) {
   for(int i = 0; i < player_1.length(); i++)
     player_1[i] = toupper(player_1[i]);
   cout << "HEllO " << player_1 << " !" << endl << endl;
-  cout << "This is how the game works" << endl;
+  line("_");
+  cout << endl;
+  cout << "This is how the game works:" << endl << endl;
+  line("-", 40);
+  cout << endl;
+  cout << "The game will consist of multiple rounds!";
+  cout << "Each round will be related to a specific topic." << endl;
+  cout << "In each round you will answer specific mc questions!" << endl;
+  cout << "At the end of each round, your data will be saved and score will be updated!" << endl;
+  cout << "There will be lucky 7 and bonus rounds as well!" << endl;
+  cout << "These rounds will include detailed instructions of the games." << endl;
+  cout << endl << "Note: If you quit without completing a round, game progress will not be stored!" << endl;
+  line("_");
   buffer();
 }
 
@@ -71,6 +83,7 @@ cout << "Game Currency is : " << currency << endl;
 }
 
 //___________________________________________________________________
+
 // functions converts argument string to lowercase string
 string ToLowerCase(string lower){
   for (int i = 0; i < lower.length(); i++){
