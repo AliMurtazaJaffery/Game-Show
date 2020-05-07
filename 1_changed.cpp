@@ -16,18 +16,29 @@ using namespace std;
 int index;
 string player_1, currency;
 
+
+void line(string character, int n = 120) {
+  for(int i = 0; i < n; i++ ){
+    cout << character;
+  }
+  cout << endl;
+  //cout << "______________________________________________________________________________________________________________________"<< endl;
+}
+
 // function printd endl, and then clears it
 void buffer() {
   cout << endl;
   cout << "Press Enter to Continue!" << endl;
+  cin.get();
   cin.get();
   system("cls"); // change to clear for linux
 }
 
 // function to print introduction for the game and instructions too, edit the last!!!
 void introduction (string player_1) {
-
-  cout << "HEllO " << player_1 << endl;
+  for(int i = 0; i < player_1.length(); i++)
+    player_1[i] = toupper(player_1[i]);
+  cout << "HEllO " << player_1 << " !" << endl << endl;
   cout << "This is how the game works" << endl;
   buffer();
 }
@@ -37,7 +48,9 @@ void select_currency(){
   int currency_options;
   do {
 
-  cout << "Please select Game Score Currency to record your progress " << endl;
+  cout << "Please select Game Score Currency to record your progress " << endl << endl;
+  line("_");
+  cout << endl;
   cout << "1: Dollar [$]" << endl;
   cout << "2: Game Currency [|_|]" << endl;
 
@@ -56,6 +69,42 @@ void select_currency(){
 cout << "Game Currency is : " << currency << endl;
 
 }
+
+//___________________________________________________________________
+// functions converts argument string to lowercase string
+string ToLowerCase(string lower){
+  for (int i = 0; i < lower.length(); i++){
+    char x = lower[i];
+    if (x <= 'Z' && x >= 'A') {
+      lower[i] = ( x - ('A'-'a') );
+    }
+  }
+  return lower;
+}
+
+void storing_data(int question, int money){
+
+  fstream fout("output.txt", ios::out);
+
+  fout << player_1 << endl;
+  fout << question << endl;
+  fout << money << endl;
+  fout << currency << endl;
+  fout << index;
+
+  fout.close();
+}
+
+void extracting_data(int &question,int &money) {
+
+  fstream fin("output.txt", ios::in);
+
+  fin >> player_1 >> question >> money >> currency >> index;
+  fin.close();
+
+}
+
+
 //___________________________________________________________________
 
 void printboard() {
@@ -95,17 +144,20 @@ void lucky_7(int &round, int &money) {
     srand(time(0));
     number = (rand() % 15) + 1;
 
-    typewriter("Current round is ", 150000);
-    cout << round << endl << endl;
+    //typewriter("Current round is ", 150000);
+    //cout << round << endl << endl;
     usleep(500000);
     typewriter("Current Score is ", 150000);
-    cout << money << endl;
+    cout << money << currency << endl;
+    line("_");
     usleep(500000);
     buffer();
     typewriter("Welcome to the game of Lucky 7 !", 100000);
     cout << endl << endl;
     usleep(500000);
     typewriter("Instructions: ", 100000);
+    cout << endl;
+    line("_",100);
     cout << endl << endl;
     usleep(200000);
     typewriter("Lucky Seven is a dice game.", 100000);
@@ -117,6 +169,8 @@ void lucky_7(int &round, int &money) {
     typewriter("Roll The Dice, if the sum of the dice values matches your bet, score is doubled.", 100000);
     cout << endl;
     typewriter("If not, round is forfeited!", 100000);
+    cout << endl;
+    line("_", 100);
     cout << endl;
 
     sleep(1);
@@ -166,7 +220,7 @@ void lucky_7(int &round, int &money) {
       typewriter("CONGRATULATIONS! ",100000);
       cout << endl << endl;
       money *= 2;
-      cout << "Money is " << money << endl;
+      cout << "Money is " << money << currency << endl;
 
     }
     else if(number < 7 && bet == 'B') {
@@ -174,7 +228,7 @@ void lucky_7(int &round, int &money) {
       typewriter("Congratulations! ",100000);
       cout << endl << endl;
       money *= 2;
-      cout << "Money is " << money << endl;
+      cout << "Money is " << money << currency << endl;
 
     }
     else if(number == 7 && bet == 'S') {
@@ -182,21 +236,26 @@ void lucky_7(int &round, int &money) {
       typewriter("Congratulations! ",100000);
       cout << endl << endl;
       money *= 2;
-      cout << "Money is " << money << endl;
+      cout << "Money is " << money << currency << endl;
 
     }
     else {
       typewriter("Sorry! No luck! ",100000);
+      cout <<" Money is " << money << currency << endl;
       cout << endl << endl;
     }
     round +=1;
+
+    storing_data(round,money);
+    sleep(1);
+    buffer();
 }
 
 void displayClock(int seconds) {
     // system call to clear the screen
     system("cls"); // change to clear for linux
     cout << endl;
-    cout << setfill(' ') << setw(55) << "           TIMER         \n";
+    cout << setfill(' ') << setw(55) << "              TIMER         \n";
     cout << setfill(' ') << setw(55) << " ------------------\n";
     cout << endl;
     cout << "                                        | " << setfill('0') << setw(2) << seconds << " sec | " << endl << endl;
@@ -205,6 +264,9 @@ void displayClock(int seconds) {
 
 void timer(int seconds) {
   int value = 1;
+  if (seconds < 11) {
+    seconds = 30;
+  }
   int internal_s = 0;
    while (seconds >= internal_s) {
        // display the timer
@@ -228,15 +290,20 @@ void rapid_fire(int &round, int &money) {
   if(fire.fail()) {
     typewriter("Rapid Fire has been Canceled! Sorry! ", 100000);
     cout << endl;
+    round++;
   }
   else {
     typewriter("Welcome to the rapid fire round!", 100000);
+    cout << endl;
+    ::line("_");
     cout << endl << endl;
 
     typewriter("How many questions can you answer? ",100000);
     typewriter("Remember, the number of questions should be more than 2 and less than 16!", 100000);
     cout << endl << endl;
     cin >> n;
+    ::line("_");
+    cout << endl;
     if(n < 2 || n > 16) {
       do {
         cout << endl;
@@ -271,9 +338,11 @@ void rapid_fire(int &round, int &money) {
     typewriter("Remember, each correct answer is worth 200 points while incorrect answer is worth 0 points!", 100000);
     cout << endl;
     typewriter("To prepare, you will be given time under 1 minute. This time can be set by you!", 100000);
+    cout << endl << endl;
+    usleep(500000);
+    typewriter("How many seconds do you need to prepare for the questions? [please enter value more than 10]", 100000);
     cout << endl;
-    typewriter("How many seconds do you need to prepare for the questions? ", 100000);
-    cout << endl;
+    usleep(500000);
     typewriter("Seconds : ", 100000);
     cin >> seconds;
     timer(seconds);
@@ -300,49 +369,19 @@ void rapid_fire(int &round, int &money) {
     sleep(1);
 
     cout << money << endl;
+    ::line("_");
+    buffer();
 
     delete [] questions;
     delete [] answers;
     delete [] user_answers;
+    round++;
+    storing_data(round,money);
   }
 }
 
 //___________________________________________________________________
 
-// functions converts argument string to lowercase string
-string ToLowerCase(string lower){
-  for (int i = 0; i < lower.length(); i++){
-    char x = lower[i];
-    if (x <= 'Z' && x >= 'A') {
-      lower[i] = ( x - ('A'-'a') );
-    }
-  }
-  return lower;
-}
-
-void storing_data(int question, int money){
-
-  fstream fout("output.txt", ios::out);
-
-  fout << player_1 << endl;
-  fout << question << endl;
-  fout << money << endl;
-  fout << currency << endl;
-  fout << index;
-
-  fout.close();
-}
-
-void extracting_data(int &question,int &money) {
-
-  fstream fin("output.txt", ios::in);
-
-  fin >> player_1 >> question >> money >> currency >> index;
-  fin.close();
-
-}
-
-//___________________________________________________________________
 
 void sports(int &question,int &money) {
 
@@ -355,11 +394,14 @@ void sports(int &question,int &money) {
 
     cout << "Welcome to the SPORTS ROUND!" << endl;
     cout << "Your current balance is " << money << currency << endl;
+    line("_", 60);
     buffer();
 
   }
 
   cout << "Question " << question << " is: " << endl << endl;
+  line("_", 60);
+  cout << endl;
 
   struct questions{
 
@@ -385,12 +427,21 @@ void sports(int &question,int &money) {
   index = random;
   cout << left;
   cout << game_program[index].question << endl << endl ;
-  cout << "A) " << setw(25) << game_program[index].option_A << "B) " << game_program[index].option_B << endl;
-  cout << "C) " << setw(25) << game_program[index].option_C << "D) " << game_program[index].option_D << endl;
+  cout << "(A) " << setw(25) << game_program[index].option_A << "(B) " << game_program[index].option_B << endl;
+  cout << endl;
+  cout << "(C) " << setw(25) << game_program[index].option_C << "(D) " << game_program[index].option_D << endl;
+  cout << endl;
+  line("_", 60);
 
   cout << endl << "Your Answer: ";
 
-  getline(cin,answer);
+  if (variable_getline == 7) {
+   cin.ignore( numeric_limits<streamsize>::max(), '\n' );
+   getline(cin, answer);
+  }
+  else{
+    getline(cin,answer);
+  }
 
   if (ToLowerCase(answer) == game_program[index].correct_option || ToLowerCase(answer) == game_program[index].correct_letter) {
 
@@ -401,7 +452,9 @@ void sports(int &question,int &money) {
     cout << endl << "Incorrect Answer!" << endl;
     money = money / 2;
   }
+  line("_", 60);
   cout<< endl << "Your new balance is " << currency << money << endl;
+  line("_", 60);
   question++;
 
   storing_data(question,money);
@@ -417,10 +470,14 @@ void technology(int &question, int &money) {
   if (index == 7){
     cout << "Welcome to the TECHNOLOGY ROUND!" << endl;
     cout << "Your current balance is " << money << currency << endl;
+    line("_");
     sleep(1);
     buffer();
   }
   cout << "Question " << question << " is: " << endl << endl;
+  line("_", 60);
+  cout << endl;
+
   struct questions {
 
     string question, option_A, option_B, option_C, option_D, correct_option, correct_letter;
@@ -445,9 +502,14 @@ void technology(int &question, int &money) {
   index = random;
   cout << left;
   cout << game_program[index].question << endl << endl;
-  cout << "A) " << setw(25) << game_program[index].option_A << "B) " << game_program[index].option_B << endl;
-  cout << "C) " << setw(25) << game_program[index].option_C << "D) " << game_program[index].option_D << endl;
+  cout << "(A) " << setw(25) << game_program[index].option_A << "(B) " << game_program[index].option_B << endl;
+  cout << endl;
+  cout << "(C) " << setw(25) << game_program[index].option_C << "(D) " << game_program[index].option_D << endl;
+  line("_", 60);
+  cout << endl;
+
   cout << endl << "Your Answer: ";
+
 
   getline(cin,answer);
   if (ToLowerCase(answer) == game_program[index].correct_option || ToLowerCase(answer) == game_program[index].correct_letter) {
@@ -458,7 +520,9 @@ void technology(int &question, int &money) {
     cout << endl << "Incorrect Answer!" << endl;
     money = money / 2;
   }
+  line("_", 60);
   cout << endl << "Your new balance is " << currency << money << endl;
+  line("_", 60);
   question++;
   storing_data(question,money);
   sleep(1);
@@ -471,9 +535,14 @@ void world_history(int &question,int &money){
   if (index==7){
     cout << "Welcome to the World History section!" << endl;
     cout << "Your current balance is " << money << currency << endl;
+    line("_", 60);
+    sleep(1);
     buffer();
   }
   cout << "Question "<<question-1<<" is: " << endl;
+  line("_", 60);
+  cout << endl;
+
   struct questions{
     string question, option_A, option_B, option_C, option_D, correct_option, correct_letter;
   }game_program[5];
@@ -495,8 +564,11 @@ void world_history(int &question,int &money){
   index = random;
   cout << left;
   cout << game_program[index].question << endl << endl;
-  cout << "A) " << setw(25) << game_program[index].option_A << "B) " << game_program[index].option_B << endl;
-  cout << "C) " << setw(25) << game_program[index].option_C << "D) " << game_program[index].option_D << endl;
+  cout << "(A) " << setw(25) << game_program[index].option_A << "(B) " << game_program[index].option_B << endl;
+  cout << endl;
+  cout << "(C) " << setw(25) << game_program[index].option_C << "(D) " << game_program[index].option_D << endl;
+  line("_", 60);
+  cout << endl;
 
   cout << endl << "Your Answer: ";
 
@@ -511,7 +583,9 @@ void world_history(int &question,int &money){
     cout << endl << "Incorrect Answer!" << endl;
     money = money / 2;
   }
+  line("_", 60);
   cout<< endl << "Your new balance is " << currency << money << endl;
+  line("_", 60);
   question++;
 
   storing_data(question,money);
@@ -527,9 +601,14 @@ void entertainment(int &question, int &money){
   if (index == 7) {
     cout << "Welcome to the Entertainment round!" << endl;
     cout << "Your current balance is " << money << currency << endl;
+    line("_", 60);
+    sleep(1);
     buffer();
   }
-  cout << "Question " << question-2 << " is: " << endl << endl;
+  cout << "Question " << question-1 << " is: " << endl << endl;
+  line("_", 60);
+  cout << endl;
+
   struct questions{
     string question, option_A, option_B, option_C, option_D, correct_option, correct_letter;
   }game_program[5];
@@ -550,8 +629,11 @@ void entertainment(int &question, int &money){
   index = random;
   cout << left;
   cout << game_program[index].question << endl << endl;
-  cout << "A) " << setw(25) << game_program[index].option_A << "B) " << game_program[index].option_B << endl;
-  cout << "C) " << setw(25) << game_program[index].option_C << "D) " << game_program[index].option_D << endl;
+  cout << "(A) " << setw(25) << game_program[index].option_A << "(B) " << game_program[index].option_B << endl;
+  cout << endl;
+  cout << "(C) " << setw(25) << game_program[index].option_C << "(D) " << game_program[index].option_D << endl;
+  line("_", 60);
+  cout << endl;
 
   cout << endl << "Your Answer: ";
 
@@ -566,7 +648,9 @@ void entertainment(int &question, int &money){
     cout << endl << "Incorrect Answer!" << endl;
     money = money / 2;
   }
+  line("_", 60);
   cout<< endl << "Your new balance is " << currency << money << endl;
+  line("_", 60);
   question++;
 
   storing_data(question,money);
@@ -582,9 +666,14 @@ void intelligence_quotient(int &question, int &money) {
   if (index == 7) {
     cout << "Our last section will test your IQ" << endl;
     cout << "Your current balance is: " << money << currency << endl;
+    line("_", 60);
+    sleep(1);
     buffer();
   }
-  cout << "Question " << question-3 << " is: " << endl << endl;
+  cout << "Question " << question-1 << " is: " << endl << endl;
+  line("_", 60);
+  cout << endl;
+
   struct questions{
     string question, option_A, option_B, option_C, option_D, correct_option, correct_letter;
   }game_program[5];
@@ -605,8 +694,11 @@ void intelligence_quotient(int &question, int &money) {
   index = random;
   cout << left;
   cout << game_program[index].question << endl << endl;
-  cout << "A) " << setw(25) << game_program[index].option_A << "B) " << game_program[index].option_B << endl;
-  cout << "C) " << setw(25) << game_program[index].option_C << "D) " << game_program[index].option_D << endl;
+  cout << "(A) " << setw(25) << game_program[index].option_A << "(B) " << game_program[index].option_B << endl;
+  cout << endl;
+  cout << "(C) " << setw(25) << game_program[index].option_C << "(D) " << game_program[index].option_D << endl;
+  line("_", 60);
+  cout << endl;
 
   cout << endl << "Your Answer: ";
 
@@ -621,7 +713,9 @@ void intelligence_quotient(int &question, int &money) {
     cout << endl << "Incorrect Answer!" << endl;
     money = money / 2;
   }
+  line("_", 60);
   cout<< endl << "Your new balance is " << currency << money << endl;
+  line("_", 60);
   question++;
 
   storing_data(question,money);
@@ -636,37 +730,41 @@ int main(){
   int round, money;
   extracting_data(round, money);
 
-  if (round>1){
-    string name,response;
-    cout<<"Welcome!"<<endl;
-    cout<<"Type your name: ";
-    cin>>name;
-    if (name==player_1){
-      cout<<"Do you want to continue from where you left?(Yes\\No)"<<endl;
-      cin>>response;
-      if (ToLowerCase(response)=="no"){
-        index=7;
-        round=1;
-        money=1000;
+  if (round > 1){
+    string name, response;
+    cout << "Welcome!" << endl;
+    cout << "Type your name: ";
+    cin >> name;
+    if (name == player_1){
+      cout << "Do you want to continue from where you left? [Yes or No] "<< endl;
+      cin >> response;
+      if (ToLowerCase(response) == "no") {
+        index = 7;
+        round = 1;
+        money = 1000;
         storing_data(round,money);
       }
     }
-    else{
-      cout<<"No previous database found. Starting game from the begining"<<endl;
-      index=7;
-      round=1;
-      money=1000;
+    else {
+      cout << "No previous database found. Starting game from the begining" << endl;
+      index = 7;
+      round = 1;
+      money = 1000;
       storing_data(round,money);
     }
     buffer();
   }
   extracting_data(round,money);
-  if (round==1){
-    cout << "Welcome to Quiz 2020!" << endl;
+  if (round == 1){
+    cout << "___________________________________________" << endl;
+    cout << endl << "          Welcome to Quiz 2020! \a" << endl;
+    cout << "___________________________________________" << endl;
     buffer();
     cout << "Enter first name of player : " ;
     cin >> player_1;
+    line("_");
     buffer();
+
 
     introduction(player_1);
     select_currency();
@@ -708,14 +806,14 @@ int main(){
   while (11<round && round<14){
     intelligence_quotient(round,money);
   }
+  typewriter("We have come to the end of the game! ", 100000);
+  cout << endl;
+  typewriter("Your Final Score is :", 100000);
+  cout << money << currency << endl;
   index=7;
   player_1="none";
   currency="none";
   round=1;
   money=1000;
   storing_data(round,money);
-
-
-
-
 }
