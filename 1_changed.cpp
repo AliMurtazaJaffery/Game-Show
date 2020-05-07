@@ -642,25 +642,42 @@ int main(){
   int round, money;
   extracting_data(round, money);
 
-  if (round == 1) {
-
+  if (round>1){
+    string name,response;
+    cout<<"Welcome!"<<endl;
+    cout<<"Type your name: ";
+    cin>>name;
+    if (name==player_1){
+      cout<<"Do you want to continue from where you left?(Yes\\No)"<<endl;
+      cin>>response;
+      if (ToLowerCase(response)=="no"){
+        index=7;
+        round=1;
+        money=1000;
+        storing_data(round,money);
+      }
+    }
+    else{
+      cout<<"No previous database found. Starting game from the begining"<<endl;
+      index=7;
+      round=1;
+      money=1000;
+      storing_data(round,money);
+    }
+    buffer();
+  }
+  extracting_data(round,money);
+  if (round==1){
     cout << "Welcome to Quiz 2020!" << endl;
     buffer();
-
     cout << "Enter first name of player : " ;
     cin >> player_1;
-
     buffer();
 
     introduction(player_1);
     select_currency();
     buffer();
   }
-  else{
-    cout<<"Welcome back "<<player_1<<endl;
-    buffer();
-  }
-
 
   srand(time(NULL));
 
