@@ -390,13 +390,7 @@ void sports(int &question,int &money) {
 
   cout << endl << "Your Answer: ";
 
-  if (variable_getline == 7) {
-   cin.ignore( numeric_limits<streamsize>::max(), '\n' );
-   getline(cin, answer);
-  }
-  else{
-    getline(cin,answer);
-  }
+  getline(cin,answer);
 
   if (ToLowerCase(answer) == game_program[index].correct_option || ToLowerCase(answer) == game_program[index].correct_letter) {
 
@@ -535,7 +529,7 @@ void entertainment(int &question, int &money){
     cout << "Your current balance is " << money << currency << endl;
     buffer();
   }
-  cout << "Question " << question-1 << " is: " << endl << endl;
+  cout << "Question " << question-2 << " is: " << endl << endl;
   struct questions{
     string question, option_A, option_B, option_C, option_D, correct_option, correct_letter;
   }game_program[5];
@@ -590,7 +584,7 @@ void intelligence_quotient(int &question, int &money) {
     cout << "Your current balance is: " << money << currency << endl;
     buffer();
   }
-  cout << "Question " << question-1 << " is: " << endl << endl;
+  cout << "Question " << question-3 << " is: " << endl << endl;
   struct questions{
     string question, option_A, option_B, option_C, option_D, correct_option, correct_letter;
   }game_program[5];
