@@ -10,11 +10,11 @@
 #include <unistd.h>
 
 using namespace std;
+
 //global variable
 //index will be used in the structured questions.
 int index;
-string player_1;
-string currency;
+string player_1, currency;
 
 // function printd endl, and then clears it
 void buffer() {
@@ -342,7 +342,9 @@ void extracting_data(int &question,int &money) {
 
 }
 
-void sports_section(int &question,int &money) {
+//___________________________________________________________________
+
+void sports(int &question,int &money) {
 
   int random, variable_getline;
   string answer;
@@ -352,7 +354,7 @@ void sports_section(int &question,int &money) {
   if (index == 7){
 
     cout << "Welcome to the SPORTS ROUND!" << endl;
-    cout << "Your current balance is " << currency << money << endl;
+    cout << "Your current balance is " << money << currency << endl;
     buffer();
 
   }
@@ -420,7 +422,7 @@ void technology(int &question, int &money) {
 
   if (index == 7){
     cout << "Welcome to the TECHNOLOGY ROUND!" << endl;
-    cout << "Your current balance is " << currency << money << endl;
+    cout << "Your current balance is " << money << currency << endl;
     sleep(1);
     buffer();
   }
@@ -473,8 +475,8 @@ void world_history(int &question,int &money){
   int random;
   string answer;
   if (index==7){
-    cout<<"Welcome to the World History section!"<<endl;
-    cout<<"Your current balance is "<<currency<<money<<endl;
+    cout << "Welcome to the World History section!" << endl;
+    cout << "Your current balance is " << money << currency << endl;
     buffer();
   }
   cout << "Question "<<question-1<<" is: " << endl;
@@ -530,7 +532,7 @@ void entertainment(int &question, int &money){
 
   if (index == 7) {
     cout << "Welcome to the Entertainment round!" << endl;
-    cout << "Your current balance is " << currency << money << endl;
+    cout << "Your current balance is " << money << currency << endl;
     buffer();
   }
   cout << "Question " << question-1 << " is: " << endl << endl;
@@ -585,7 +587,7 @@ void intelligence_quotient(int &question, int &money) {
 
   if (index == 7) {
     cout << "Our last section will test your IQ" << endl;
-    cout << "Your current balance is: " << currency << money << endl;
+    cout << "Your current balance is: " << money << currency << endl;
     buffer();
   }
   cout << "Question " << question-1 << " is: " << endl << endl;
@@ -633,6 +635,8 @@ void intelligence_quotient(int &question, int &money) {
   buffer();
 }
 
+//___________________________________________________________________
+
 int main(){
 
   int round, money;
@@ -661,7 +665,7 @@ int main(){
   srand(time(NULL));
 
   while (round < 3){
-    sports_section(round,money);
+    sports(round,money);
   }
   index=7;
   storing_data(round,money);
