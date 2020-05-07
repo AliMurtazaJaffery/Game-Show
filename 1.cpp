@@ -364,6 +364,7 @@ int main(){
   }
   index=7;
   player_1="none";
+  currency="none";
   round=1;
   money=1000;
   storing_data(round,money);
