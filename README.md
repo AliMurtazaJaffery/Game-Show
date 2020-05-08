@@ -9,9 +9,9 @@
 * NAME: Rajiv Arnav   
   UID:3035709057
 
-## Description of the Text-Based Game -
+# Description of the Text-Based Game -
 
-* Our project is dedicated to emulate a trivia based gameshow. This game show would include several rounds bound by a sequential game pattern i.e. succession of rounds in an order.
+* Our project is dedicated to emulate a trivia based gameshow. This game show would include several rounds bound by a sequential game     pattern i.e. succession of rounds in an order.
 * The project structure is based on our user earning points in the form of money by answering trivia questions. 
   Every right decision would lead to addition of points, in turn every error would lead to the reduction of points i.e. the game money. 
   The currency of money earned can be entered by the user or using default value be set to game currency.
