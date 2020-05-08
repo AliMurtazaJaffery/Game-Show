@@ -1,0 +1,12 @@
+MURTAZA
+-Worked on the skeleton of our program(the main function)
+-managed the loading and saving of game status using file I/O
+-made the 5 different functions for each round of questions which included random generation of questions
+-Responsible for Makefile and storing game status using structure
+
+
+ARNAV
+-Worked on the lucky_7(which included random generation of events) and the rapid fire(including loading questions from text file) function
+-Managed the output and formatting for our our complete program
+-Seperated functions into different files
+-Responsible for the Indroductury function, the effects during the game(typewriter effect,buffer() for clearing screen) and Updating Readme.
