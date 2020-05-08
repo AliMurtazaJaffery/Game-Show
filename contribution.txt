@@ -1,12 +1,19 @@
-MURTAZA
--Worked on the skeleton of our program(the main function)
--managed the loading and saving of game status using file I/O
--made the 5 different functions for each round of questions which included random generation of questions
--Responsible for Makefile and storing game status using structure
+##MURTAZA:
+
+- Worked on the initial skeleton code of our game code i.e.the main() function.
+- Completed the loading and saving of Game Status for Users. This was done by using file I/O features.
+- Coded 5 different functions representing 5 rounds of the game. Each round included random event generation for questions.
+  These questions were stored in data structures i.e. structures to bundel data efficiently. 
+  All 5 functions have game saving checkpoints at the end to save loading status for players.
+- Responsible for Makefile to impliment smooth running of code.
 
 
-ARNAV
--Worked on the lucky_7(which included random generation of events) and the rapid fire(including loading questions from text file) function
--Managed the output and formatting for our our complete program
--Seperated functions into different files
--Responsible for the Indroductury function, the effects during the game(typewriter effect,buffer() for clearing screen) and Updating Readme.
+##ARNAV:
+
+- Coded on the lucky_7 function.This included generation of random events using srand() and rand(). This also included effects on output     formatting and voice effects.
+- Coded the rapid_fire function. This function included output effects and voide effects as well. Additionally, utilized dynamic memory     allocation to store game questions. Also implimented reading of data from file to load game questions. 
+- Managed the Output formating and indentation of all output of program.
+- Added proper indentation and comments to the code to make it readable.
+- Strategically split main code into different files to facilitate the usage of makefile to impliment proper code functionality.
+- Responsible for adding game Indroductury functions, the effects during the game i.e. typewriter effect (to print output like               typewriter), line demarcation, buffer (for clearing screen after rounds and display settings) 
+- Wrote Readme file to provide insights onto the functionality and usage of code as a game.
