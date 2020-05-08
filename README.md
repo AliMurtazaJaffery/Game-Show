@@ -3,10 +3,10 @@
 ## Team Members:-
 
 * NAME: Jaffery Syed Muhammad Ali Murtaza   
-  UID: 3035718046
+  UID:  3035718046
   
 * NAME: Rajiv Arnav   
-  UID:3035709057
+  UID:  3035709057
 
 # Description of the Text-Based Game -
 
