@@ -18,7 +18,7 @@
   In some rounds, the questions will be answered by manually by entering the answer, while in other rounds the user would have to select   an option.
 * The topics would include but are not limited to science, sports, politics, gk. 
 * The game will include rapid fire rounds and lucky 7 round's that would allow the user to gamble with large amounts of money.
-  and rounds which would create chances to earn more money by gambling.
+  and rounds which would create chances to earn more money by gambling. Such rounds will include fun elements like typewritter effects,   sound effects and suspense building with screen pause functions! 
 * At the end of the game, a player report will be generated and a score status of current player would be displayed.
 
 # Features we plan to Implement:
