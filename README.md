@@ -30,6 +30,7 @@
 
 ## How Do We Use Data Structures?
  * The game is based on trivia questions. These questions are stored in structures.
+ * Some questions are stores in arrays.
  * User data is stored using structures as well.
 
 ## How Do We Implement Dynamic Memory Management?
