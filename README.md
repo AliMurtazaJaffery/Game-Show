@@ -20,8 +20,14 @@
 * The game will include rapid fire rounds and lucky 7 round's that would allow the user to gamble with large amounts of money.
   and rounds which would create chances to earn more money by gambling. Such rounds will include fun elements like typewritter effects,   sound effects and suspense building with screen pause functions! 
 * At the end of the game, a player report will be generated and a score status of current player would be displayed.
+## Compilation and execution instructions
+To compile and run, type:
+```
+make
+./gameshow
+```
 
-# Features we plan to Implement:
+# Features we have Implemented:
 
 ## How Does Our Program Implement Random Events?
 * As our game is trivia based, we intend to use functions under rand() to randomly select questions that the user will answer.
