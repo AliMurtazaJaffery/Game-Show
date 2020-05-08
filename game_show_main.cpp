@@ -27,7 +27,7 @@ struct data{
 }store_game;
 
 // function to print line consisted of characters passed by user
-void line(string character, int n = 85) {
+void line(string character, int n = 80) {
   for(int i = 0; i < n; i++ ){
     cout << character;
   }
@@ -52,6 +52,7 @@ void introduction (string player_1) {
   cout << "There will be lucky 7 and bonus rounds as well!" << endl;
   cout << "These rounds will include detailed instructions of the games." << endl;
   cout << endl << "Note: If you quit without completing a round, game progress will not be stored!" << endl;
+  cout << "WARNING: Game prompts user to press enter to continue. Sometimes, there might not be any progress after pressing enter, if this happens, press enter again to continue!" << endl;
   line("_");
   buffer();
 }
