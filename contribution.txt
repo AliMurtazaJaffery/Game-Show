@@ -1,4 +1,4 @@
-##MURTAZA:
+MURTAZA:
 
 - Worked on the initial skeleton code of our game code i.e.the main() function.
 - Completed the loading and saving of Game Status for Users. This was done by using file I/O features.
@@ -8,7 +8,7 @@
 - Responsible for Makefile to impliment smooth running of code.
 
 
-##ARNAV:
+ARNAV:
 
 - Coded on the lucky_7 function.This included generation of random events using srand() and rand(). This also included effects on output     formatting and voice effects.
 - Coded the rapid_fire function. This function included output effects and voide effects as well. Additionally, utilized dynamic memory     allocation to store game questions. Also implimented reading of data from file to load game questions. 
