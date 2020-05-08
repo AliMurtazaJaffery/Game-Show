@@ -49,6 +49,7 @@ void introduction (string player_1) {
   cout << "Each round will be related to a specific topic." << endl;
   cout << "In each round you will answer specific mc questions!" << endl;
   cout << "At the end of each round, your data will be saved and score will be updated!" << endl;
+  cout << "If you enter unexpected values, the game will react the same :) If game crashed restart the program." << endl;
   cout << "There will be lucky 7 and bonus rounds as well!" << endl;
   cout << "These rounds will include detailed instructions of the games." << endl;
   cout << endl << "Note: If you quit without completing a round, game progress will not be stored!" << endl;
@@ -143,7 +144,7 @@ void lucky_7(int &round, int &money) {
     usleep(500000);
     typewriter("Instructions: ", 100000);
     cout << endl;
-    line("_",100);
+    line("_");
     cout << endl << endl;
     usleep(200000);
     typewriter("Lucky Seven is a dice game.", 100000);
@@ -795,6 +796,8 @@ int main(){
   cout << endl;
   typewriter("Your Final Score is :", 100000);
   cout << money << currency << endl;
+  cout << "Goodbye" << player_1 << "!" << endl;
+  cout << "Hope you enjoyed the game!" << endl; << endl;
   buffer();
   index=7;
   player_1="none";
