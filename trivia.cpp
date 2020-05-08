@@ -24,7 +24,7 @@ struct data{
 
 data store_game;
 
-void line(string character, int n = 120) {
+void line(string character, int n = 85) {
   for(int i = 0; i < n; i++ ){
     cout << character;
   }
@@ -38,7 +38,7 @@ void buffer() {
   cout << "Press Enter to Continue!" << endl;
   cin.get();
   cin.get();
-  system("cls"); // change to clear for linux
+  system("clear"); // change to clear for linux
 }
 
 // function to print introduction for the game and instructions too, edit the last!!!
@@ -168,7 +168,7 @@ void typewriter(string line, int speed){
 
 void lucky_7(int &round, int &money) {
 
-    system("cls"); // change to clear for linux
+    system("clear"); // change to clear for linux
     int number;
     char bet;
     srand(time(0));
@@ -283,7 +283,7 @@ void lucky_7(int &round, int &money) {
 
 void displayClock(int seconds) {
     // system call to clear the screen
-    system("cls"); // change to clear for linux
+    system("clear"); // change to clear for linux
     cout << endl;
     cout << setfill(' ') << setw(55) << "              TIMER         \n";
     cout << setfill(' ') << setw(55) << " ------------------\n";
