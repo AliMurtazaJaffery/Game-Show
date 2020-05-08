@@ -24,9 +24,9 @@
 # Features we plan to Implement:
 
 ## How Does Our Program Implement Random Events?
-*As our game is trivia based, we intend to use functions under rand() to randomly select questions that the user will answer.
- These questions will be randomly chosen from sata structures which store the questions, options and answers.
-*The lucky 7 round uses rand() function to randomly generate numbers for the betting game.
+* As our game is trivia based, we intend to use functions under rand() to randomly select questions that the user will answer.
+  These questions will be randomly chosen from sata structures which store the questions, options and answers.
+* The lucky 7 round uses rand() function to randomly generate numbers for the betting game.
 
 ## How Do We Use Data Structures?
  * The game is based on trivia questions. These questions are stored in structures.
