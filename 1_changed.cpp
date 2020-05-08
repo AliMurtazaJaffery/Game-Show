@@ -15,7 +15,13 @@ using namespace std;
 //index will be used in the structured questions.
 int index;
 string player_1, currency;
+//structure for storing game status
+struct data{
+  string name,currency;
+  int question,money,index;
+};
 
+data store_game;
 
 void line(string character, int n = 120) {
   for(int i = 0; i < n; i++ ){
@@ -29,7 +35,6 @@ void line(string character, int n = 120) {
 void buffer() {
   cout << endl;
   cout << "Press Enter to Continue!" << endl;
-  cin.get();
   cin.get();
   system("cls"); // change to clear for linux
 }
@@ -97,8 +102,12 @@ string ToLowerCase(string lower){
 
 void storing_data(int question, int money){
 
-  fstream fout("output.txt", ios::out);
-
+  fstream fout("output.txt");
+  store_game.name=player_1;
+  store_game.currency=currency;
+  store_game.question=question;
+  store_game.money=money;
+  store_game.index=index;
   fout << player_1 << endl;
   fout << question << endl;
   fout << money << endl;
@@ -112,7 +121,13 @@ void extracting_data(int &question,int &money) {
 
   fstream fin("output.txt", ios::in);
 
-  fin >> player_1 >> question >> money >> currency >> index;
+  fin >> store_game.name >> store_game.question >> store_game.money >> store_game.currency >> store_game.index;
+  player_1=store_game.name;
+  currency=store_game.currency;
+  question=store_game.question;
+  money=store_game.money;
+  index=store_game.index;
+
   fin.close();
 
 }
@@ -312,7 +327,7 @@ void rapid_fire(int &round, int &money) {
     cout << endl << endl;
 
     typewriter("How many questions can you answer? ",100000);
-    typewriter("Remember, the number of questions should be more than 2 and less than 16!", 100000);
+    typewriter("Remember, the number of questions should be more than 2 and less than 13!", 100000);
     cout << endl << endl;
     cin >> n;
     ::line("_");
@@ -353,7 +368,7 @@ void rapid_fire(int &round, int &money) {
     typewriter("To prepare, you will be given time under 1 minute. This time can be set by you!", 100000);
     cout << endl << endl;
     usleep(500000);
-    typewriter("How many seconds do you need to prepare for the questions? [please enter value more than 10]", 100000);
+    typewriter("How many seconds do you need to prepare for the questions? [please enter a value more than 10]", 100000);
     cout << endl;
     usleep(500000);
     typewriter("Seconds : ", 100000);
@@ -447,14 +462,7 @@ void sports(int &question,int &money) {
   line("_", 60);
 
   cout << endl << "Your Answer: ";
-
-  if (variable_getline == 7) {
-   cin.ignore( numeric_limits<streamsize>::max(), '\n' );
-   getline(cin, answer);
-  }
-  else{
-    getline(cin,answer);
-  }
+  getline(cin,answer);
 
   if (ToLowerCase(answer) == game_program[index].correct_option || ToLowerCase(answer) == game_program[index].correct_letter) {
 
@@ -618,7 +626,7 @@ void entertainment(int &question, int &money){
     sleep(1);
     buffer();
   }
-  cout << "Question " << question-1 << " is: " << endl << endl;
+  cout << "Question " << question-2 << " is: " << endl << endl;
   line("_", 60);
   cout << endl;
 
@@ -673,7 +681,7 @@ void entertainment(int &question, int &money){
 
 void intelligence_quotient(int &question, int &money) {
 
-  int random;
+  int random,variable_getline;
   string answer;
 
   if (index == 7) {
@@ -683,7 +691,7 @@ void intelligence_quotient(int &question, int &money) {
     sleep(1);
     buffer();
   }
-  cout << "Question " << question-1 << " is: " << endl << endl;
+  cout << "Question " << question-3 << " is: " << endl << endl;
   line("_", 60);
   cout << endl;
 
@@ -715,7 +723,13 @@ void intelligence_quotient(int &question, int &money) {
 
   cout << endl << "Your Answer: ";
 
-  getline(cin,answer);
+  if (variable_getline==7){
+   cin.ignore( numeric_limits<streamsize>::max(), '\n' );
+   getline(cin,answer);
+  }
+  else{
+    getline(cin,answer);
+  }
 
   if (ToLowerCase(answer) == game_program[index].correct_option || ToLowerCase(answer) == game_program[index].correct_letter) {
 
