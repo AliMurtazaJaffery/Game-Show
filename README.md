@@ -22,25 +22,27 @@
   and rounds which would create chances to earn more money by gambling.
 * At the end of the game, a player report will be generated and a score status of current player would be displayed.
 
-## Features we plan to Implement -
+## Features we plan to Implement:
 
-1. Generation of random events:
- * As our game is trivia based, we intend to use functions under random() to randomly select questions that the user will answer.
- * We intend to create rapif fire and bonus rounds which would both include the rolling of dice, which would also be implemented by the random function.
+# How Does Our Program Implement Random Events?
+*As our game is trivia based, we intend to use functions under rand() to randomly select questions that the user will answer.
+ These questions will be randomly chosen from sata structures which store the questions, options and answers.
+*The lucky 7 round uses rand() function to randomly generate numbers for the betting game.
 
-2. Dynamic structures for storing game sets or events:
- * The game is based on trivia questions. These questions will be stored in different data strucutures like arrays.
- * Some of the user data will be entered in basic data structures while other will use more high level data structures.
+# How Do We Use Data Structures?
+ * The game is based on trivia questions. These questions are stored in structures.
+ * User data is stored using structures as well.
 
-3. Dynamic memory management:
- * Using arrays and linked lists we will store data generated in the game.
+# How Do We Implement Dynamic Memory Management?
+ * The rapid fire round is based on the users demands.
+ * As per the users choice, the number of questions are entered to a dynamic array and the answers are stored in another dynamic array. 
+   These questions and answers are then used to play the rapid fire round.
 
-4. File input/output:
- * All of the user data will be entered to different files. Each of these user files will be stored separately.
- * The game would also automatically generate a score board. This score board will be stored in a file.
+# Use Of File input/output:
+ * All of the user data is stored in a file.
  * Some of the game variables would be also written in files to maintain proper records of game choices and other implementation of game features.
 
-5. Program code in multiple files:
+# How Do We Impliment Program code in multiple files>
  * Program code will be stored in multiple files to implement the game functionality without any errors.
  * These files would help to regulate the process used in the game.
- * We plan to use functions for our rapid fire round and store them in multiple files. In addition to this, we plan to use a Makefile to increase the efficiency of our program. 
+
