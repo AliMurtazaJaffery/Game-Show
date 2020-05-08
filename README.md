@@ -41,8 +41,9 @@
 ## Use Of File input/output:
  * All of the user data is stored in a file.
  * Some of the game variables would be also written in files to maintain proper records of game choices and other implementation of game    features.
+ * If one player quits the game in the middle of the game, he/she can restart from last saved checkpoint by entering name and loading      data
 
-## How Do We Impliment Program code in multiple files>
+## How Do We Impliment Program code in multiple files?
  * Program code will be stored in multiple files to implement the game functionality without any errors.
  * These files would help to regulate the process used in the game.
 
