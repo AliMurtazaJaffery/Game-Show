@@ -1,5 +1,4 @@
-# ENGG1340: Computer Programming 2                                                 
-# Group 142
+# ENGG1340: COMPUTER PROGRAMMING 2                                                 Group 142
 
 ## Team Members:-
 
