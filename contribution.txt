@@ -1,6 +1,6 @@
 MURTAZA:
 
-- Worked on the initial skeleton code of our game code i.e.the main() function.
+- Worked on the skeleton code of our game code i.e.the main() function.
 - Completed the loading and saving of Game Status for Users. This was done by using file I/O features.
 - Managed the extracting_data and storing data functions.
 - Coded 5 different functions representing 5 rounds of the game. Each round included random event generation for questions.
