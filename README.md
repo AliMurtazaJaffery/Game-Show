@@ -21,7 +21,7 @@
   and rounds which would create chances to earn more money by gambling. Such rounds will include fun elements like typewritter effects,   sound effects and suspense building with screen pause functions! 
 * At the end of the game, a player report will be generated and a score status of current player would be displayed.
 ## Compilation and execution instructions
-To compile and run, type:
+To compile and run the code, enter:
 ```
 make gameshow
 ./gameshow
