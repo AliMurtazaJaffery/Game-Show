@@ -14,8 +14,10 @@
 using namespace std;
 
 //global variable
-//index will be used in the structured questions.
+//index will be used in the structured questions.its purpose is to help in generating random questions and it will help us know the first question of each section
 int index;
+//player_1 is the name of the user and currency of the game will be chosen by the user
+
 string player_1, currency;
 
 //___________________________________________________________________
@@ -85,7 +87,7 @@ cout << "Game Currency is : " << currency << endl;
 
 }
 
-// to store data to files
+// this function will store game status to the output.txt text file
 void storing_data(int question, int money){
 
   fstream fout("output.txt");
@@ -103,7 +105,7 @@ void storing_data(int question, int money){
   fout.close();
 }
 
-// to extract data from files
+// to extract data from the output.txt file(in order to load the game. Moreover, game status will also be stored in the structure.
 void extracting_data(int &question,int &money) {
 
   fstream fin("output.txt", ios::in);
@@ -122,7 +124,7 @@ void extracting_data(int &question,int &money) {
 
 //___________________________________________________________________
 
-
+//two rounds of lucky_7 in our game, where random generation of events will occur.It's an already established game with no available citation.
 void lucky_7(int &round, int &money) {
 
     system("clear"); // change to clear for linux
@@ -237,7 +239,7 @@ void lucky_7(int &round, int &money) {
     sleep(1);
     buffer();
 }
-
+//this function will display a clock
 void displayClock(int seconds) {
     // system call to clear the screen
     system("clear"); // change to clear for linux
@@ -248,7 +250,7 @@ void displayClock(int seconds) {
     cout << "                                        | " << setfill('0') << setw(2) << seconds << " sec | " << endl << endl;
     cout << setfill(' ') << setw(55) << " ------------------\n";
 }
-
+//this function prints out the timer
 void timer(int seconds) {
   int value = 1;
   if (seconds <= 12) {
@@ -266,7 +268,7 @@ void timer(int seconds) {
            }
        }
 }
-
+//you have to answer a series of questions. This function will use dyanamic array.
 void rapid_fire(int &round, int &money) {
 
   string file = "rapid_fire_questions.txt";
@@ -291,13 +293,13 @@ void rapid_fire(int &round, int &money) {
     cin >> n;
     ::line("_");
     cout << endl;
-    if(n < 2 || n > 16) {
+    if(n < 2 || n > 12) {
       do {
         cout << endl;
         typewriter("Sorry! Please re-enter a VALID value", 100000);
         cout << endl;
         cin >> n;
-      } while( n < 2 || n > 16);
+      } while( n < 2 || n > 12);
   }
 
     buffer();
@@ -369,7 +371,7 @@ void rapid_fire(int &round, int &money) {
 
 //___________________________________________________________________
 
-
+//the following 5 functions contain a set of 5 questions each, out of which two questions will be printed out on the screen.
 void sports(int &question,int &money) {
 
   int random, variable_getline;
