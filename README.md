@@ -43,6 +43,10 @@ make gameshow
  * The rapid fire round is based on the users demands.
  * As per the users choice, the number of questions are entered to a dynamic array and the answers are stored in another dynamic array. 
    These questions and answers are then used to play the rapid fire round.
+   
+## How Do We Use Dynamic Memory Management?
+* In the rapid fire round, the user is propted to enter the number of questions they can answer to their capabilities.
+* This value is used to initialize a dynamic array to stors questions for the user!
 
 ## Use Of File input/output:
  * All of the user data is stored in a file.
@@ -52,4 +56,6 @@ make gameshow
 ## How Do We Impliment Program code in multiple files?
  * Program code will be stored in multiple files to implement the game functionality without any errors.
  * These files would help to regulate the process used in the game.
+ 
+## Non-Standard C/C++ Libraries:
 
