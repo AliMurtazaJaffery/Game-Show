@@ -59,3 +59,6 @@ make gameshow
  
 ## Non-Standard C/C++ Libraries:
 
+#include <time.h> : Used to initialize seed of srand to current time
+#include <unistd.h> : Used to impliment sleep and usleep functions in the game
+
