@@ -40,7 +40,7 @@ void printboard() {
 
 }
 
-// functions converts argument string to lowercase string
+// functions converts argument string to lowercase string for a uniform answer
 string ToLowerCase(string lower){
   for (int i = 0; i < lower.length(); i++){
     char x = lower[i];
