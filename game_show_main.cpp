@@ -799,7 +799,7 @@ int main(){
   typewriter("Your Final Score is :", 100000);
   cout << money << currency << endl;
   cout << "Goodbye" << player_1 << "!" << endl;
-  cout << "Hope you enjoyed the game!" << endl; << endl;
+  cout << "Hope you enjoyed the game!" << endl;
   buffer();
   index=7;
   player_1="none";
