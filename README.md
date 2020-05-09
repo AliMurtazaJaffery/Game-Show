@@ -62,3 +62,12 @@ make gameshow
 * #include <time.h> : Used to initialize seed of srand to current time
 * #include <unistd.h> : Used to impliment sleep and usleep functions in the game
 
+# At a Glance:
+Our game begins by greeting the user followed by taking in user data. This data is entered into a file using input and output streams. When the user enterers their name, the code checks if previous data exists for the particular user. If data is found, the user is presented with the chance to use that data or let it go. The advantage of this feature is that no other player can access data for another user. 
+The introduction gives a detailed explanation of the game and prompts the user to continue when they’re done reading it. The user also had the ability to change the game currency or keep it to the default value. 
+Once the game begins, the user is prompted to answer questions from different sections of the game. These questions are generated randomly from structures that store these questions. 
+The game includes bonus rounds like lucky 7 and rapid fire. These rounds are different from the rest of the game structure. This is what makes them special. They also incorporate different features like the typewriter effect and using sounds. 
+After each round the data is updated in the file. If the user quits the game in the middle of a round, they can restart from the last checkpoint.
+In the end of the game, the score for the current user is shown and goodbye message is displayed. 
+
+
