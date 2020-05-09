@@ -7,6 +7,7 @@ MURTAZA:
   These questions were stored in data structures i.e. structures to bundel data efficiently. 
   All 5 functions have game saving checkpoints at the end to save loading status for players.
 - Responsible for Makefile to impliment smooth running of code.
+- Added comments to make the code readable.
 
 
 ARNAV:
