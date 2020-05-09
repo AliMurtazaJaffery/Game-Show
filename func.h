@@ -5,7 +5,7 @@
 #include <string>
 using namespace std;
 
-
+//required header files
 void typewriter(string line, int speed);
 
 void printboard();
