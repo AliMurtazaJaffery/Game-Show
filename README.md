@@ -23,7 +23,7 @@
 ## Compilation and execution instructions
 To compile and run, type:
 ```
-make
+make gameshow
 ./gameshow
 ```
 
